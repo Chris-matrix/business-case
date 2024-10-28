@@ -1,25 +1,88 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <form id="loginForm">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynasty Defense Alarm Systems & Monitoring</title>
+    <link rel="stylesheet" href="bc.css">
+</head>
+<body>
+    <!-- Sign Up Form -->
+    <form id="signupForm">
+        <h2>Sign Up</h2>
         <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required>   
+        <input type="text" id="username" name="username" required>   
 
         <br>
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" required>
         <br>
-        <button type="submit">Login</button>   
-
+        <button type="submit">Sign Up</button>   
     </form>
+
+    <!-- Homepage Section (initially hidden) -->
+    <section id="homepage" class="hidden">
+        <h2>User Dashboard</h2>
+        <!-- Add Sensor Section -->
+        <div id="sensorConfig" class="card">
+            <h3>Add Sensor</h3>
+            <input type="number" id="sensorNumber" placeholder="Sensor Number">
+            <select id="sensorType">
+                <option value="">Select Type</option>
+                <option value="fire">Fire</option>
+                <option value="smoke">Smoke</option>
+                <option value="heat">Heat</option>
+            </select>
+            <input type="text" id="sensorBuilding" placeholder="Building">
+            <input type="number" id="sensorFloor" placeholder="Floor">
+            <input type="text" id="sensorRoom" placeholder="Room">
+            <input type="number" id="delayTime" placeholder="Delay Time (seconds)">
+            <button onclick="addSensor()" class="btn-primary">Add Sensor</button>
+        </div>
+
+        <!-- Configured Sensors List -->
+        <div id="sensorList" class="card">
+            <h3>Configured Sensors</h3>
+            <ul id="sensors"></ul>
+        </div>
+
+        <!-- Alarm Simulation Section -->
+        <div id="alarmSimulation" class="card">
+            <h3>Alarm Simulation</h3>
+            <button onclick="simulateAlarm()" class="btn-danger">Simulate Alarm</button>
+            <div id="alarmInfo"></div>
+        </div>
+
+        <!-- Logout Button -->
+        <button onclick="logout()" class="btn-secondary">Logout</button>
+    </section>
+
+    <script src="bc.js"></script>
+</body>
+</html>
+
+<!--Admin page-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dynasty Defense Alarm Systems & Monitoring</title>
-    
+    <link rel="stylesheet" href="bc.css">
 </head>
 <body>
-    </body>
-<link rel="stylesheet" href="bc.css">
-<script src="bc.js"></script>
-</html>
+    <!-- Admin Homepage Section (initially hidden) -->
+    <section id="adminHomepage" class="hidden">
+        <h2>Admin Dashboard</h2>
 
+        <!-- Sensor Status Section -->
+        <div id="sensorStatus" class="card">
+            <h3>Sensor Status</h3>
+            <ul id="sensorStatusList"></ul>
+        </div>
+
+        <!-- Sensor Alerts Section -->
+        <div id="sensorAlerts" class="card">
+            <h3>Sensor Alerts</h3>
+            <
